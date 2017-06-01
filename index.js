@@ -56,7 +56,7 @@ const writeFile = promiseify(fs.writeFile);
 function inlineResources(projectPath) {
 
   // Match only TypeScript files in projectPath.
-  const files = glob.sync('**/*.ts', {cwd: projectPath});
+  const files = glob.sync('**/*.{js,ts}', {cwd: projectPath});
 
   // For each file, inline the templates and styles under it and write the new file.
   return Promise.all(files.map(filePath => {
