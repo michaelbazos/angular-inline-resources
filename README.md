@@ -1,6 +1,6 @@
 # angular-inline-resources
 
-The current package is meant to simplify the packaging workflow of an angular library, by inlining the html templates and the stylesheets of your angular components.
+The current package is meant to simplify the packaging workflow of an angular library, by inlining the html templates and the stylesheets of your angular components. The inlining logic is from [@angular/material2](https://github.com/angular/material2) library.
 
 ## Installation
 
