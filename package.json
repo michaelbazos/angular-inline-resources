@@ -1,0 +1,31 @@
+{
+  "name": "angular-inline-resources",
+  "version": "1.0.0",
+  "description": "Inline templates and stylesheets of angular components. This utility is meant to simplify the distribution workflow of your library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelbazos/angular-inline-resources.git"
+  },
+  "keywords": [
+    "angular",
+    "angular2",
+    "inline",
+    "template",
+    "library",
+    "components",
+    "ngc",
+    "rollup",
+    "templateUrl",
+    "styleUrls"
+  ],
+  "author": "Michael Bazos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelbazos/angular-inline-resources/issues"
+  },
+  "homepage": "https://github.com/michaelbazos/angular-inline-resources#readme"
+}

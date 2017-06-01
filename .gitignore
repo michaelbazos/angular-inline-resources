@@ -1,0 +1,13 @@
+# editors
+/.idea
+/.vscode
+
+# dependencies
+/node_modules
+
+# miscellaneous
+npm-debug.log
+
+# operating systems
+.DS_Store
+Thumbs.db
