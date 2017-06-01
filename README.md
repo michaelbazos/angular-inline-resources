@@ -18,4 +18,4 @@ const inlineResources = require('angular-inline-resources');
 inlineResources(<path-to-folder>);
 ```
 
-The above will process all your `*.ts` files _<path-to-folder>_ and replace all `templateUrl` and `styleUrls` properties to their inline equivalent.
+The above will process all your `*.ts` or `*.js` component files from _<path-to-folder>_, and replace all `templateUrl` and `styleUrls` properties to their inline equivalent.
