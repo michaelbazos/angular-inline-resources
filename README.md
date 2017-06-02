@@ -10,7 +10,7 @@ npm install angular-inline-resources --save-dev
 
 ## Usage
 
-```
+```js
 const inlineResources = require('angular-inline-resources');
 
 // 
@@ -21,7 +21,7 @@ const inlineResources = require('angular-inline-resources');
 
 or in your gulp workflow:
 
-```
+```js
 //
 // Example of a gulp task
 //
