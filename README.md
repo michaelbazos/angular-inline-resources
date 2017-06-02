@@ -13,9 +13,22 @@ npm install angular-inline-resources --save-dev
 ```
 const inlineResources = require('angular-inline-resources');
 
-// In your packaging worflow, typically right after copying your sources
-// to some build folder
-inlineResources(<path-to-folder>);
+// 
+// In your packaging worflow, typically after copying your sources
+//
+.then(() => inlineResources(<path-to-copied-sources>))
 ```
 
-The above will process all your `*.ts` or `*.js` component files from _<path-to-folder>_, and replace all `templateUrl` and `styleUrls` properties to their inline equivalent.
+or in your gulp workflow:
+
+```
+//
+// Example of a gulp task
+//
+gulp.task('angular:inline', () => {
+  return Promise.resolve()
+    .then(() => inlineResources(<path-to-copied-sources>));
+});
+```
+
+The above will process all your `*.ts` or `*.js` component files from _<path-to-copied-sources>_, and replace all `templateUrl` and `styleUrls` properties to their inline equivalent.
