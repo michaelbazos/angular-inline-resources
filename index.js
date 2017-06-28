@@ -96,7 +96,7 @@ function inlineResourcesFromString(content, urlResolver) {
  * @return {string} The content with all templates inlined.
  */
 function inlineTemplate(content, urlResolver) {
-  return content.replace(/templateUrl:\s*'([^']+?\.html)'/g, function (m, templateUrl) {
+  return content.replace(/templateUrl:\s*'([^']+?\.(html|svg))'/g, function (m, templateUrl) {
     const templateFile = urlResolver(templateUrl);
     const templateContent = fs.readFileSync(templateFile, 'utf-8');
     const shortenedTemplate = templateContent
