@@ -31,7 +31,7 @@ const glob = require('glob');
  * We use promises instead of synchronized functions to make the process less I/O bound and
  * faster. It also simplifies the code.
  */
-function promiseify(fn) {
+function promiseify (fn) {
   return function () {
     const args = [].slice.call(arguments, 0);
     return new Promise((resolve, reject) => {
@@ -53,9 +53,9 @@ const writeFile = promiseify(fs.writeFile);
  * Inline resources in a tsc/ngc compilation.
  * @param projectPath {string} Path to the project.
  */
-function inlineResources(projectPath) {
+function inlineResources (projectPath) {
 
-  // Match only TypeScript files in projectPath.
+  // Match only JavaScript or TypeScript files in projectPath.
   const files = glob.sync('**/*.{js,ts}', {cwd: projectPath});
 
   // For each file, inline the templates and styles under it and write the new file.
@@ -79,7 +79,7 @@ function inlineResources(projectPath) {
  * @param urlResolver {Function} A resolver that takes a URL and return a path.
  * @returns {string} The content with resources inlined.
  */
-function inlineResourcesFromString(content, urlResolver) {
+function inlineResourcesFromString (content, urlResolver) {
   // Curry through the inlining functions.
   return [
     inlineTemplate,
@@ -95,7 +95,7 @@ function inlineResourcesFromString(content, urlResolver) {
  * @param urlResolver {Function} A resolver that takes a URL and return a path.
  * @return {string} The content with all templates inlined.
  */
-function inlineTemplate(content, urlResolver) {
+function inlineTemplate (content, urlResolver) {
   return content.replace(/templateUrl:\s*'([^']+?\.(html|svg))'/g, function (m, templateUrl) {
     const templateFile = urlResolver(templateUrl);
     const templateContent = fs.readFileSync(templateFile, 'utf-8');
@@ -113,7 +113,7 @@ function inlineTemplate(content, urlResolver) {
  * @param content {string} The source file's content.
  * @return {string} The content with all styles inlined.
  */
-function inlineStyle(content, urlResolver) {
+function inlineStyle (content, urlResolver) {
   return content.replace(/styleUrls:\s*(\[[\s\S]*?\])/gm, function (m, styleUrls) {
     const urls = eval(styleUrls);
     return 'styles: ['
@@ -135,7 +135,7 @@ function inlineStyle(content, urlResolver) {
  * @param content {string} The source file's content.
  * @returns {string} The content with all moduleId: mentions removed.
  */
-function removeModuleId(content) {
+function removeModuleId (content) {
   return content.replace(/\s*moduleId:\s*module\.id\s*,?\s*/gm, '');
 }
 
