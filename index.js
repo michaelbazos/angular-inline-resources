@@ -101,8 +101,8 @@ function inlineTemplate (content, urlResolver) {
     const templateContent = fs.readFileSync(templateFile, 'utf-8');
     const shortenedTemplate = templateContent
       .replace(/([\n\r]\s*)+/gm, ' ')
-      .replace(/"/g, '\\"');
-    return `template: "${shortenedTemplate}"`;
+      .replace(/'/g, `\\'`);
+    return `template: '${shortenedTemplate}'`;
   });
 }
 
@@ -122,8 +122,8 @@ function inlineStyle (content, urlResolver) {
         const styleContent = fs.readFileSync(styleFile, 'utf-8');
         const shortenedStyle = styleContent
           .replace(/([\n\r]\s*)+/gm, ' ')
-          .replace(/"/g, '\\"');
-        return `"${shortenedStyle}"`;
+          .replace(/'/g, `\\'`);
+        return `'${shortenedStyle}'`;
       })
         .join(',\n')
       + ']';
