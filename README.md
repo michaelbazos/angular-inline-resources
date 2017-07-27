@@ -39,3 +39,7 @@ gulp.task('angular:inline', () => {
 ```
 
 The above will process all your `*.ts` or `*.js` component files from _<path-to-copied-sources>_, and replace all `templateUrl` and `styleUrls` properties to their inline equivalent.
+
+## License
+
+MIT © [Michael Bazos](https://github.com/michaelbazos)
