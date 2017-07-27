@@ -4,7 +4,8 @@
   "description": "Inline templates and stylesheets of angular components. This utility is meant to simplify the distribution workflow of your library.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha index.spec.js",
+    "test:watch": "mocha index.spec.js --watch"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,14 @@
   "bugs": {
     "url": "https://github.com/michaelbazos/angular-inline-resources/issues"
   },
-  "homepage": "https://github.com/michaelbazos/angular-inline-resources#readme"
+  "homepage": "https://github.com/michaelbazos/angular-inline-resources#readme",
+  "devDependencies": {
+    "@types/chai": "^4.0.1",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.17",
+    "chai": "^4.1.0",
+    "del": "^3.0.0",
+    "fs-extra": "^4.0.0",
+    "mocha": "^3.4.2"
+  }
 }
