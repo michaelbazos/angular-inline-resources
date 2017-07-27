@@ -1,4 +1,9 @@
-# angular-inline-resources
+<p>
+    <img src="https://img.shields.io/npm/v/angular-inline-resources.svg?style=flat-square" alt="version"/>
+    <img src="https://img.shields.io/npm/l/angular-inline-resources.svg?style=flat-square" alt="license"/>
+</p>
+
+<h1 align="center">angular-inline-resources</h1> 
 
 The current package is meant to simplify the packaging workflow of an angular library, by inlining the html templates and the stylesheets of your angular components. The inlining logic is from [@angular/material2](https://github.com/angular/material2) library.
 
