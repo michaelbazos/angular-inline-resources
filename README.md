@@ -18,11 +18,12 @@ npm install angular-inline-resources --save-dev
 
 ```js
 const inlineResources = require('angular-inline-resources');
+const fs = require('fs-extra');
 
-// 
-// In your packaging worflow, typically after copying your sources
-//
-.then(() => inlineResources(<path-to-copied-sources>))
+// Copy folder 'src' to 'tmp' then inline resources
+Promise.resolve()
+            .then(() => fs.copy('src', 'tmp'))
+            .then(() => inlineResources('tmp'))
 ```
 
 or in your gulp workflow:
@@ -33,7 +34,7 @@ or in your gulp workflow:
 //
 gulp.task('angular:inline', () => {
   return Promise.resolve()
-    .then(() => inlineResources(<path-to-copied-sources>));
+    .then(() => inlineResources('tmp'));
 });
 ```
 
