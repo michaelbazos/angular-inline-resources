@@ -1,6 +1,7 @@
-<p>
+<p align="center">
     <img src="https://img.shields.io/npm/v/angular-inline-resources.svg?style=flat-square" alt="version"/>
     <img src="https://img.shields.io/npm/l/angular-inline-resources.svg?style=flat-square" alt="license"/>
+    <img src="https://img.shields.io/travis/michaelbazos/angular-inline-resources.svg?style=flat-square" alt="license"/>
 </p>
 
 <h1 align="center">angular-inline-resources</h1> 
