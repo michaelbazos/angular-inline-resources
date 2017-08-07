@@ -49,12 +49,12 @@ describe('angular-inline-resource', () => {
 
     it('should have expected template content', () => {
         expect(comp1.template).to.equal('<div>Hello ol\' chap!</div> ');
-        expect(comp2.template).to.equal('\1234');
+        expect(comp2.template).to.equal('\\1234');
     });
 
     it('should have expected styles content', () => {
         expect(comp1.styles).to.deep.equal(['@import \'./fakepath\';']);
-        expect(comp2.template).to.equal('\1234');
+        expect(comp2.template).to.equal('\\1234');
     });
 
     after(() => {
