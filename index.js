@@ -88,7 +88,7 @@ function inlineResourcesFromString (content, urlResolver) {
  * @return {string} The content with all templates inlined.
  */
 function inlineTemplate (content, urlResolver) {
-  return content.replace(/templateUrl:\s*'([^']+?\.(html|svg))'/g, function (m, templateUrl) {
+  return content.replace(/templateUrl\s*:\s*[`'"]([^`'"]+?\.(html|svg))[`'"]/g, function (m, templateUrl) {
     const templateFile = urlResolver(templateUrl);
     const templateContent = fs.readFileSync(templateFile, 'utf-8');
     const shortenedTemplate = templateContent
@@ -107,7 +107,7 @@ function inlineTemplate (content, urlResolver) {
  * @return {string} The content with all styles inlined.
  */
 function inlineStyle (content, urlResolver) {
-  return content.replace(/styleUrls:\s*(\[[\s\S]*?\])/gm, function (m, styleUrls) {
+  return content.replace(/styleUrls\s*:\s*(\[[\s\S]*?\])/gm, function (m, styleUrls) {
     const urls = eval(styleUrls);
     return 'styles: ['
       + urls.map(styleUrl => {
@@ -130,7 +130,7 @@ function inlineStyle (content, urlResolver) {
  * @returns {string} The content with all moduleId: mentions removed.
  */
 function removeModuleId (content) {
-  return content.replace(/\s*moduleId:\s*module\.id\s*,?\s*/gm, '');
+  return content.replace(/\s*moduleId\s*:\s*module\.id\s*,?\s*/gm, '');
 }
 
 module.exports = inlineResources;
